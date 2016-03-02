@@ -21,7 +21,7 @@ namespace tx_reporting_customprocessing
         {
             DataSet ds = new DataSet();
             ds.ReadXml("sample_db.xml", XmlReadMode.Auto);
-
+            mailMerge1.RemoveEmptyBlocks = false;
             mailMerge1.Merge(ds.Tables["Person_Address"]);
             
         }
