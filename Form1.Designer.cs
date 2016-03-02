@@ -94,7 +94,7 @@
             // 
             // mailMerge1
             // 
-            this.mailMerge1.ReportDataSourceConfig = "";
+            this.mailMerge1.RemoveEmptyBlocks = false;
             this.mailMerge1.TemplateFile = "template.docx";
             this.mailMerge1.TextComponent = this.textControl1;
             this.mailMerge1.DataRowMerged += new TXTextControl.DocumentServer.MailMerge.DataRowMergedHandler(this.mailMerge1_DataRowMerged);
@@ -120,7 +120,7 @@
             // mergeToolStripMenuItem
             // 
             this.mergeToolStripMenuItem.Name = "mergeToolStripMenuItem";
-            this.mergeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mergeToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.mergeToolStripMenuItem.Text = "Merge";
             this.mergeToolStripMenuItem.Click += new System.EventHandler(this.mergeToolStripMenuItem_Click);
             // 

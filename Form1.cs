@@ -23,7 +23,6 @@ namespace tx_reporting_customprocessing
             ds.ReadXml("sample_db.xml", XmlReadMode.Auto);
 
             mailMerge1.Merge(ds.Tables["Person_Address"]);
-            
         }
 
         private void mailMerge1_DataRowMerged(object sender, TXTextControl.DocumentServer.MailMerge.DataRowMergedEventArgs e)
@@ -32,7 +31,8 @@ namespace tx_reporting_customprocessing
             {
                 tx.Create();
 
-                tx.Load(e.MergedRow, TXTextControl.BinaryStreamType.InternalUnicodeFormat);
+                TXTextControl.LoadSettings ls = new LoadSettings { ApplicationFieldFormat = ApplicationFieldFormat.MSWord };
+                tx.Load(e.MergedRow, TXTextControl.BinaryStreamType.InternalUnicodeFormat, ls);
 
                 foreach (Table table in tx.Tables)
                 {
